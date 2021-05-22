@@ -4,12 +4,13 @@ import message_text_async
 
 
 class MyClient(discord.Client):
-    # test to echo
     async def on_message(self, message):
+        # test to echo
         await message_text_async.response(self, message)
 
-    # print ready after bot turn on
+    
     async def on_ready(self):
+        # print ready after bot turn on
         await message_text_async.print_ready(self)
 
 

@@ -2,14 +2,13 @@ import asyncio
 
 
 class MyCommands:
-
-    # test command echo
     async def test(message):
+        # test command echo
         await message.channel.send('Yes Here!!')
 
-    # clearing message
+    
     async def clearmsg(message):
-        
+        # clearing message
         try:
             clear_number = int(message.content.split(" ", 1)[1])
 

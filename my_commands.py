@@ -1,7 +1,7 @@
 import asyncio
 
 
-class my_commands:
+class MyCommands:
     async def test(message):
         # test command echo
 

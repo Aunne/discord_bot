@@ -1,9 +1,9 @@
 import discord
-from my_commands import my_commands
+from my_commands import MyCommands
 
 commands_lib = {
-    'test': my_commands.test,
-    'clearmsg': my_commands.clearmsg
+    'test': MyCommands.test,
+    'clearmsg': MyCommands.clearmsg
 }
 
 

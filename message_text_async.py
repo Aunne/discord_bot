@@ -1,27 +1,26 @@
 import discord
-from my_commands import test
+from my_commands import my_commands
 
-my_commands={
-    'test':test.test
-    }
-
-async def response(self,message):
-        # make sure message author is mot bot
-        if message.author == self.user:
-            return
-        
-        # executing command
-        if message.content.startswith('//'):
-            test_command = message.content.split(" ")[0].replace("//","")
-
-            if test_command in my_commands:
-                await my_commands[test_command](message)
-            else:
-                await message.channel.send('The command is not exist ! ')
+commands_lib = {
+    'test': my_commands.test,
+    'clearmsg': my_commands.clearmsg
+}
 
 
+async def response(self, message):
+    # make sure message author is mot bot
+    if message.author == self.user:
+        return
 
-        print(message.content)
+    # executing command
+    if message.content.startswith('//'):
+        test_command = message.content.split(" ")[0].replace("//", "")
+
+        if test_command in commands_lib:
+            await commands_lib[test_command](message)
+        else:
+            await message.channel.send('The command is not exist ! ')
+
 
 async def print_ready(self):
     print('bot is ready!')
